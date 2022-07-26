@@ -23,7 +23,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/movies', movieRoutes)
 
 app.get('/', (req, res) => {
-	res.send('<a href="https://documenter.getpostman.com/view/12993294/UzXNSwkg">Click here to view the API documentation</a>Click here to view the API documentation');
+	res.send('<a href="https://documenter.getpostman.com/view/12993294/UzXNSwkg">Click here to view the API documentation</a>');
 })
 // not found
 app.use((req, res, next) => {
