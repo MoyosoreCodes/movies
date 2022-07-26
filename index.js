@@ -22,12 +22,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/users', userRoutes)
 app.use('/api/movies', movieRoutes)
 
+app.get('/', (req, res) => {
+	res.send('<a href="https://documenter.getpostman.com/view/12993294/UzXNSwkg">Click here to view the API documentation</a>Click here to view the API documentation');
+})
 // not found
 app.use((req, res, next) => {
 	const err = new Error(`url: ${req.url} not found`)
 	err.status = 404
 	next(err)
-})
+});
+
 
 //other stuff
 app.use((err, req, res, next) => {
