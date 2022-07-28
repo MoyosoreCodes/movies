@@ -6,12 +6,12 @@ module.exports = {
   /**
    * * add comment to a movie
    * @param {string} userEmail
-   * @param {string} movieName
+   * @param {string} slug
    * @param {string} comment
    */
-  addComment: async (userEmail, movieName, comment) => {
+  addComment: async (userEmail, slug, comment) => {
     const user = await User.findOne({ email: userEmail });
-    const movie = await Movie.findOne({ name: movieName });
+    const movie = await Movie.findOne({ slug });
     if (!movie || !user) throw new Error('Cannot find movie or user');
 
     const newComment = new Comment({
