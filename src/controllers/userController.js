@@ -79,10 +79,10 @@ module.exports = {
      comment: async (req) => {
         try {
             const {user, body} = req
-            const {movieName, comment} = body;
+            const {slug, comment} = body;
             const userEmail = user.email
 
-            const newComment = await commentService.addComment(userEmail, movieName, comment);
+            const newComment = await commentService.addComment(userEmail, slug, comment);
 
             return {
                 status: newComment ? 201 : 400,
