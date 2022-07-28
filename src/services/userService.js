@@ -38,7 +38,7 @@ module.exports = {
 
         const user = await User.findOne(loginQuery);
         if (!user) throw new Error(`${email} does not exist`);
-        if(!user.verifyPassword(password)) throw new Error("Invalid Credentials");
+        if(!await user.verifyPassword(password)) throw new Error("Invalid Credentials");
 
         const payload = {
             id: user._id,

@@ -8,7 +8,7 @@ const userRoutes = require('./src/routes/api/users');
 const movieRoutes = require('./src/routes/api/movies');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 // Connect Atlas cloud Database 
 connectDB();
