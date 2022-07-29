@@ -14,12 +14,12 @@ module.exports = {
         releaseDate, 
         rating,
         ticketPrice,
-        genre
+        genre, photo
     } = body;
     // upload the photo to cloudinary or something
     const newMovie = new Movie({
         name, description, 
-        releaseDate, 
+        releaseDate, photo,
         rating, ticketPrice, genre
     });
     newMovie.setMovieSlug();
